@@ -1,0 +1,26 @@
+
+<!--
+  Write js code to display HTML5 validation errors below fields after submit.
+  Example: https://nimb.ws/y4aqrw
+  You can use default HTML5 methods: checkValidity and validationMessage.
+-->
+
+<form>
+    <div>
+      <label for="email">Email</label>
+      <input id="email" type="email"  placeholder="example@example.com" required />
+    </div>
+  
+    <div>
+      <label for="alpha">Alphanumeric Only</label>
+      <input id="alpha" type="text" pattern="[a-zA-Z0-9]+" required />
+    </div>
+  
+    <div>
+      <label for="age">Age (min: 21)</label>
+      <input id="age" type="number" min="21" required />
+    </div>
+  
+    <input type="submit" value="Log In" />
+  </form>
+  
