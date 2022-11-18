@@ -62,9 +62,9 @@
       if (!inpObj.checkValidity()) {
         if (document.getElementById(messageid).style.display === 'none') {
           document.getElementById(messageid).style.display = 'block';
-          document.getElementById(messageid).innerHTML = inpObj.validationMessage;
+          document.getElementById(messageid).innerHTML = "<span style='color: red;'>" + inpObj.validationMessage + "</span>";
         } else {
-          document.getElementById(messageid).innerHTML = inpObj.validationMessage;
+          document.getElementById(messageid).innerHTML = "<span style='color: red;'>" + inpObj.validationMessage + "</span>";
         }
       } else {
         document.getElementById(messageid).style.display = "none";
