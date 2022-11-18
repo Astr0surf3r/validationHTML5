@@ -27,7 +27,7 @@
 
 In the solution that I made each field is validate in real time. Don't need click in the submit button to know if some field is not valid! I used a javascript method *checkValidity* and an HTML5 method *validationMessage* for the validation
 
-NOTE: with the new release of **BOOTSTRAP 5** a new one great feature is the **validation form** [check it out](https://getbootstrap.com/docs/5.0/forms/validation/) maybe this simple test
+NOTE: with the new release of **BOOTSTRAP 5** a new one great feature is the **validation form** [check it out](https://getbootstrap.com/docs/5.0/forms/validation/) maybe it could be a better and more quick solution 
 
 18th November 2022
 [@astr0surf3r](https://github.com/Astr0surf3r)
