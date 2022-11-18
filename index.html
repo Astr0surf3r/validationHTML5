@@ -15,37 +15,62 @@
 
     <div class="row">
       <div class="col text-center">
-         <form method="post" action ="#">
+         <form method="post" autocomplete="off" action="#">
          <div class="mb-3 row">
            <label for="email" class="col-sm-6 col-form-label text-end">Email*</label>
            <div class="col-sm-6 text-start">
-             <input id="email" type="email" name="email" placeholder="example@example.com" required />
-             <span id="email-validation"></span>
+             <input id="email" type="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" placeholder="example@example.com" oninput="ValidationFunction('email', 'emailmessage')" required/> <br />
+             <span id="emailmessage"></span>
            </div>
          </div>
   
           <div class="mb-3 row">
             <label for="alpha" class="col-sm-6 col-form-label text-end">Alphanumeric Only*</label>
             <div class="col-sm-6 text-start">
-              <input id="alpha" type="text" name="alphanumeric" pattern="[a-zA-Z0-9]+" required />
-              <span id="alphanumeric-validation"></span>
+              <input id="alpha" type="text" name="alphanumeric" pattern="[a-zA-Z0-9]+" oninput="ValidationFunction('alpha', 'alphamessage')" required />  <br />
+              <span id="alphamessage"></span>
             </div> 
           </div>
   
           <div class="mb-3 row">
             <label for="age" class="col-sm-6 col-form-label text-end">Age (min: 21)*</label>
             <div class="col-sm-6 text-start">
-              <input id="age" type="number" min="21" name="your age" required />
-              <span id="age-validation"></span>
+              <input id="age" type="number" min="21" name="your age" oninput="ValidationFunction('age', 'agemessage')" /> <br />
+              <span id="agemessage" color="red"></span>
             </div>
           </div>
     
           <div class="form-group">
-           <input type="submit" value="Log In" class="btn btn-info btn-sm" />
-         </div>
-       </form>
-     </div>
-   </div>
- </div>  
+           <input type="submit" value="Log In" class="btn btn-info btn-sm" onclick="SubmitFunction()"/>
+           <input type="button" value="Reset" class="btn btn-secondary btn-sm" onclick="window.location.href='index.html';" />
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+ 
+ <footer class="text-center">
+  <a href="https://github.com/Astr0surf3r/validationHTML5"> Validation HTML5 Github Repo</a>
+</footer>
+<script>
+
+    function ValidationFunction(id, messageid) {
+      var inpObj = document.getElementById(id);
+      console.log(inpObj)
+      console.log(inpObj.checkValidity())
+      if (!inpObj.checkValidity()) {
+        if (document.getElementById(messageid).style.display === 'none') {
+          document.getElementById(messageid).style.display = 'block';
+          document.getElementById(messageid).innerHTML = inpObj.validationMessage;
+        } else {
+          document.getElementById(messageid).innerHTML = inpObj.validationMessage;
+        }
+      } else {
+        document.getElementById(messageid).style.display = "none";
+      }   
+    }
+ 
+ </script>
 </body>
-  </html>
+</html>
