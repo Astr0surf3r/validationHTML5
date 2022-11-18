@@ -1,26 +1,51 @@
+<html>
+  <head>
+    <title> Test Code - Validation a form using Javascript and HTML5</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  </head>
+<body> 
+  <div class="container">
+    <div class="row">
+      <div class="col text-center">
+         <header>
+            <h1> Validation Form Test </h1>
+        </header>
+        </div>
+    </div>
 
-<!--
-  Write js code to display HTML5 validation errors below fields after submit.
-  Example: https://nimb.ws/y4aqrw
-  You can use default HTML5 methods: checkValidity and validationMessage.
--->
-
-<form>
-    <div>
-      <label for="email">Email</label>
-      <input id="email" type="email"  placeholder="example@example.com" required />
-    </div>
+    <div class="row">
+      <div class="col text-center">
+         <form method="post" action ="#">
+         <div class="mb-3 row">
+           <label for="email" class="col-sm-6 col-form-label text-end">Email*</label>
+           <div class="col-sm-6 text-start">
+             <input id="email" type="email" name="email" placeholder="example@example.com" required />
+             <span id="email-validation"></span>
+           </div>
+         </div>
   
-    <div>
-      <label for="alpha">Alphanumeric Only</label>
-      <input id="alpha" type="text" pattern="[a-zA-Z0-9]+" required />
-    </div>
+          <div class="mb-3 row">
+            <label for="alpha" class="col-sm-6 col-form-label text-end">Alphanumeric Only*</label>
+            <div class="col-sm-6 text-start">
+              <input id="alpha" type="text" name="alphanumeric" pattern="[a-zA-Z0-9]+" required />
+              <span id="alphanumeric-validation"></span>
+            </div> 
+          </div>
   
-    <div>
-      <label for="age">Age (min: 21)</label>
-      <input id="age" type="number" min="21" required />
-    </div>
-  
-    <input type="submit" value="Log In" />
-  </form>
-  
+          <div class="mb-3 row">
+            <label for="age" class="col-sm-6 col-form-label text-end">Age (min: 21)*</label>
+            <div class="col-sm-6 text-start">
+              <input id="age" type="number" min="21" name="your age" required />
+              <span id="age-validation"></span>
+            </div>
+          </div>
+    
+          <div class="form-group">
+           <input type="submit" value="Log In" class="btn btn-info btn-sm" />
+         </div>
+       </form>
+     </div>
+   </div>
+ </div>  
+</body>
+  </html>
